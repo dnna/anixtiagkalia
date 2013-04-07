@@ -22,17 +22,17 @@ class User extends BaseUser
      */
     protected $id;
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $name;
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $surname;
     /**
      * @ORM\Column(type="integer")
      */
-    protected $capacity;
+    protected $capacity = 0;
 
     const CAPACITY_PRESIDENT = 0;
     const CAPACITY_SOCIALWORKER = 1;
