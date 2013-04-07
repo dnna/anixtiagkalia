@@ -1,0 +1,37 @@
+sonata_cache:
+    caches:
+        esi:
+            servers:
+                - varnishadm -T 127.0.0.1:2000 {{ COMMAND }} "{{ EXPRESSION }}"
+        apc:
+            token:  s3cur3   # token used to clear the related cache
+            prefix: test     # prefix to ensure there is no clash between instances
+            servers:
+                - { domain: kooqit.local, ip: 127.0.0.1, port: 80}
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+
+        sonata.block.service.text:
+        sonata.block.service.action:
+        sonata.block.service.rss:
+        sonata.admin.block.overview:
+          
+sonata_admin:
+    title:      Ανοιχτή Αγκαλιά - Διαχείριση Μητρώου
+    title_logo: /images/logo.jpg
+    templates:
+        # default global templates
+        layout:  AAAdminBundle::standard_layout.html.twig
+        ajax:    SonataAdminBundle::ajax_layout.html.twig
+
+        # default actions templates, should extend a global templates
+        list:    SonataAdminBundle:CRUD:list.html.twig
+        show:    SonataAdminBundle:CRUD:show.html.twig
+    dashboard:
+        blocks:
+            # display a dashboard block
+            - { position: left, type: sonata.admin.block.admin_list }

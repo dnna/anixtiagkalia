@@ -1,0 +1,91 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>        
+        <service id="sonata.admin.amea" class="AA\AdminBundle\Admin\AmeaAdmin">
+           <tag name="sonata.admin"
+                manager_type="orm"
+                group="Μητρώο"
+                label="Amea"
+                />
+           <argument />
+           <argument>AA\SiteBundle\Entity\Amea</argument>
+           <argument>SonataAdminBundle:CRUD</argument>
+       </service>
+        <service id="sonata.admin.friend" class="AA\AdminBundle\Admin\FriendAdmin">
+           <tag name="sonata.admin"
+                manager_type="orm"
+                group="Μητρώο"
+                label="Friends"
+                />
+           <argument />
+           <argument>AA\SiteBundle\Entity\Friend</argument>
+           <argument>SonataAdminBundle:CRUD</argument>
+       </service>
+        <service id="sonata.admin.appointment" class="AA\AdminBundle\Admin\AppointmentAdmin">
+           <tag name="sonata.admin"
+                manager_type="orm"
+                group="Μητρώο"
+                label="Appointments"
+                />
+           <argument />
+           <argument>AA\SiteBundle\Entity\Appointment</argument>
+           <argument>SonataAdminBundle:CRUD</argument>
+       </service>
+        <service id="sonata.admin.users" class="AA\AdminBundle\Admin\UserAdmin">
+           <tag name="sonata.admin"
+                manager_type="orm"
+                group="Χρήστες"
+                label="Users"
+                />
+           <argument />
+           <argument>AA\UserBundle\Entity\User</argument>
+           <argument>SonataAdminBundle:CRUD</argument>
+           <call method="setUserManager">
+               <argument type='service' id='fos_user.user_manager' />
+           </call>
+       </service>
+        <service id="sonata.admin.payment" class="AA\AdminBundle\Admin\PaymentAdmin">
+           <tag name="sonata.admin"
+                manager_type="orm"
+                group="Άλλα"
+                label="Payments"
+                show_in_dashboard="false"
+                />
+           <argument />
+           <argument>AA\SiteBundle\Entity\Payment</argument>
+           <argument>SonataAdminBundle:CRUD</argument>
+       </service>
+        <service id="sonata.admin.sponsorpayment" class="AA\AdminBundle\Admin\SponsorPaymentAdmin">
+           <tag name="sonata.admin"
+                manager_type="orm"
+                group="Άλλα"
+                label="Sponsor Payments"
+                show_in_dashboard="false"
+                />
+           <argument />
+           <argument>AA\SiteBundle\Entity\SponsorPayment</argument>
+           <argument>SonataAdminBundle:CRUD</argument>
+       </service>
+        <service id="sonata.admin.disability" class="AA\AdminBundle\Admin\DisabilityAdmin">
+           <tag name="sonata.admin"
+                manager_type="orm"
+                group="Άλλα"
+                label="Disabilities"
+                />
+           <argument />
+           <argument>AA\SiteBundle\Entity\Disability</argument>
+           <argument>SonataAdminBundle:CRUD</argument>
+       </service>
+        <service id="sonata.admin.specialty" class="AA\AdminBundle\Admin\SpecialtyAdmin">
+           <tag name="sonata.admin"
+                manager_type="orm"
+                group="Άλλα"
+                label="Doctor Specialties"
+                />
+           <argument />
+           <argument>AA\SiteBundle\Entity\Specialty</argument>
+           <argument>SonataAdminBundle:CRUD</argument>
+       </service>
+   </services>
+</container>
