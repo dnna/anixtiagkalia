@@ -36,6 +36,7 @@ class User extends BaseUser
 
     const CAPACITY_PRESIDENT = 0;
     const CAPACITY_SOCIALWORKER = 1;
+    const CAPACITY_IT = 2;
 
     public function getId() {
         return $this->id;
@@ -78,6 +79,7 @@ class User extends BaseUser
         return array(
             self::CAPACITY_PRESIDENT => 'president',
             self::CAPACITY_SOCIALWORKER => 'social worker',
+            self::CAPACITY_IT => 'it support',
         );
     }
 }
