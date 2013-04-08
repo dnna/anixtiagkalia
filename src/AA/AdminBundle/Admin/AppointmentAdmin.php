@@ -44,6 +44,7 @@ class AppointmentAdmin extends Admin
             ->add('amea', 'genemu_jqueryselect2_entity', array(
                 'class' => 'AA\SiteBundle\Entity\Amea',
                 'property' => 'fullname',
+                'required' => true,
             ))
             ->add('date', 'genemu_jquerydate', array('widget' => 'single_text'))
             ->add('specialty', null, array('required' => true))

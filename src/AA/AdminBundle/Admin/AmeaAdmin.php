@@ -34,7 +34,7 @@ class AmeaAdmin extends MemberAdmin
             ->add('representativesurname', null, array('required' => false))
             ->add('sports', null, array('required' => false))
             ->add('medication', null, array('required' => false))
-            ->add('disability')
+            ->add('disability', null, array('required' => true))
             ->add('otherpeculiarities', null, array('required' => false, 'help' => 'otherpeculiarities_help'))
             ->add('payments', 'sonata_type_collection', array(
                     'required' => false,
