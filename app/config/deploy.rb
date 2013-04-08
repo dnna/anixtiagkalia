@@ -1,5 +1,5 @@
-set :application, "anixtiagkaia"
-set :user,        "anixtiagkaia"
+set :application, "anixtiagkalia"
+set :user,        "anixtiagkalia"
 set :domain,      "anixtiagkalia.dnna.gr"
 set :deploy_to,   "/home/anixtiagkalia/capifony"
 set :app_path,    "app"

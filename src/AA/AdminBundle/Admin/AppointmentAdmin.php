@@ -46,7 +46,7 @@ class AppointmentAdmin extends Admin
                 'property' => 'fullname',
             ))
             ->add('date', 'genemu_jquerydate', array('widget' => 'single_text'))
-            ->add('specialty')
+            ->add('specialty', null, array('required' => true))
             ->add('doctorname', null, array('required' => false))
             ->add('doctorsurname', null, array('required' => false))
             ->add('comments')
